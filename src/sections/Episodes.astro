@@ -1,0 +1,104 @@
+---
+import { EPISODES } from "../consts/episodes";
+---
+
+<section class="w-full h-full py-8 bg-black text-white">
+    <div class="w-full flex flex-col justify-start items-start">
+        <div
+            class="w-[90%] mx-auto flex flex-col justify-end items-start gap-4 lg:w-[80%]"
+        >
+            <h2 class="text-xl font-semibold text-violet md:text-2xl">
+                Temporada 1
+            </h2>
+            <h3 class="text-2xl font-semibold md:text-3xl">Episodios</h3>
+            <p class="mb-2">
+                Serie que transcurre 200 años antes de los eventos ocurridos en
+                Juego de tronos y que cuenta la épica historia de la casa
+                Targaryen.
+            </p>
+            <ol
+                class="grid
+                grid-cols-1
+                gap-4
+                text-[#ddd]
+                sm:grid-cols-2
+                lg:grid-cols-3
+                xl:grid-cols-4"
+            >
+                {
+                    EPISODES[0].map(
+                        ({ episode_number, title, synopsis, thumbnail }) => (
+                            <li class="w-full h-full">
+                                <article class="flex flex-col gap-2 p-3 rounded-lg border border-[#111] transition-shadow duration-200 hover:border-[#222]">
+                                    <img
+                                        class="rounded-md"
+                                        src={`/assets/img/${thumbnail.url_resource}`}
+                                        alt={thumbnail.alternative_text}
+                                        loading="lazy"
+                                    />
+
+                                    <h4 class="font-bold">
+                                        {episode_number}. {title}
+                                    </h4>
+                                    <p class="text-pretty text-sm truncate-text">
+                                        {synopsis}
+                                    </p>
+                                    <button
+                                        class="w-[fit-content] mx-auto text-xs text-violet hover:text-gray-100 relative read-more"
+                                        aria-label={`Sinopsis del episodio ${episode_number}`}
+                                    />
+                                </article>
+                            </li>
+                        ),
+                    )
+                }
+            </ol>
+        </div>
+    </div>
+</section>
+<style>
+    .truncate-text {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        transition: all 1s ease;
+    }
+    .read-more::before {
+        content: "Leer más";
+        display: block;
+        width: fit-content;
+        height: auto;
+    }
+    .read-less::after {
+        content: "Leer menos";
+        display: block;
+        width: fit-content;
+        height: auto;
+    }
+    .active {
+        box-shadow: 0 0 0.625em #ccc;
+    }
+</style>
+<script is:inline>
+    const articles = document.querySelectorAll("ol > li > article");
+    const paragraphs = document.querySelectorAll("ol > li > article > p");
+    const readBtns = document.querySelectorAll("ol > li > article > button");
+
+    readBtns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+            if (btn.classList.contains("read-more")) {
+                btn.classList.remove("read-more");
+                btn.classList.add("read-less");
+                paragraphs[i].classList.remove("truncate-text");
+
+                articles[i].classList.add("active");
+            } else {
+                btn.classList.remove("read-less");
+                btn.classList.add("read-more");
+                paragraphs[i].classList.add("truncate-text");
+                articles[i].classList.remove("active");
+            }
+        });
+    });
+</script>

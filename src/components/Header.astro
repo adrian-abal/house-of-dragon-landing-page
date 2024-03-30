@@ -1,0 +1,60 @@
+---
+import Logo from "../common/Icons/Logo.astro";
+---
+
+<header
+    class="w-full min-h-14 flex flex-row justify-start items-center fixed top-0 z-[999] bg-[rgba(0,0,0,.25)]"
+>
+    <nav class="w-[90%] mx-auto flex flex-row justify-between items-center">
+        <div class="flex justify-center items-center">
+            <a href="#" title="HBO Max Logo">
+                <Logo
+                    className="w-40 h-auto duration-200  hover:scale-105 active:scale-95"
+                /></a
+            >
+        </div>
+        <div>
+            <ul class="flex justify-between items-center gap-4">
+                <li class="flex justify-center items-center">
+                    <a
+                        class="uppercase py-2 px-6 rounded-full border border-white tracking-widest text-xs box-border backdrop-blur-sm text-white duration-200 hover:text-black hover:bg-white font-extrabold"
+                        href="#"
+                        title="Inicia sesión en tu cuenta"
+                        rel="nofollow noopener">Inicia sesión</a
+                    >
+                </li>
+                <li class="hidden justify-center items-center sm:flex">
+                    <a
+                        class="py-2 px-6 rounded-full uppercase tracking-widest text-xs font-extrabold
+                    bg-effect"
+                        href="#"
+                        title="Suscríbete a HBO Max"
+                        rel="nofollow noopener">Suscríbete ya</a
+                    >
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<style>
+    .bg-effect {
+        border: 1px solid transparent;
+        color: #fff;
+        background: linear-gradient(
+                345deg,
+                #490cb0 16.5%,
+                #9b34ef 33%,
+
+                rgba(255, 255, 255, 1) 66%,
+                rgba(255, 255, 255, 1) 100%
+            )
+            99% 50% / 400% 400%;
+
+        transition: all 0.2s ease;
+    }
+    .bg-effect:hover {
+        border: 1px solid #fff;
+        color: #000;
+        background-position: 0% 40%;
+    }
+</style>

@@ -1,0 +1,67 @@
+---
+
+---
+
+<section
+    class="w-full h-[100vh] flex justify-center items-center text-white bg-[url('/assets/img/_keyart_bigger.avif')] bg-center bg-cover relative section"
+>
+    <div
+        class="w-[90%] lg:[80%] flex flex-col justify-center items-center gap-4 absolute bottom-12 lg:relative z-10 mt-[30vw] custom-after"
+    >
+        <img
+            class="w-full max-w-[40em]"
+            src="assets/img/TT_ES.avif"
+            alt="La Casa del Dragón hero banner"
+        />
+        <h1 class="text-2xl text-balance text-center font-medium md:text-3xl">
+            Disfruta de todos los episodios de La Casa del Dragón en HBO Max
+        </h1>
+
+        <p class="text-2xl md:text-3xl font-bold">
+            9,99 €<sup class="text-base font-thin">/mes</sup>
+        </p>
+        <p class="text-lg md:text-xl font-normal">Cancela cuando quieras</p>
+        <a
+            class="py-3 px-16 rounded-full
+            uppercase tracking-widest text-sm sm:text-base font-extrabold text-white bg-effect"
+            href="#"
+            title="Suscríbete ya"
+            rel="nofollow noopener">Suscríbete Ya</a
+        >
+    </div>
+</section>
+<style>
+    .section::after {
+        content: "";
+        width: 100%;
+        height: 75%;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: rgb(0, 0, 0);
+        background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(255, 255, 255, 0) 100%
+        );
+    }
+    .bg-effect {
+        border: 1px solid transparent;
+        background: linear-gradient(
+                345deg,
+                #490cb0 16.5%,
+                #9b34ef 33%,
+
+                rgba(255, 255, 255, 0) 66%,
+                rgba(255, 255, 255, 0) 100%
+            )
+            99% 50% / 400% 400%;
+
+        transition: all 0.6s ease;
+    }
+    .bg-effect:hover {
+        border: 1px solid #fff;
+        background-position: 0% 40%;
+    }
+</style>

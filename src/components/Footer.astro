@@ -1,0 +1,182 @@
+---
+
+---
+
+<footer class="w-full flex justify-center items-center py-10 bg-black">
+    <div class="w-[80%] flex flex-col justify-center items-center">
+        <ul
+            id="lang-list"
+            class="h-12 flex flex-col justify-start items-center rounded-md border border-transparent
+        text-md text-violet font-bold overflow-hidden duration-500"
+        >
+            <li
+                class="w-full py-3 px-4 flex flex-col justify-center items-center duration-200 will-change-transform hover:scale-95"
+            >
+                <button
+                    id="lang"
+                    class="block uppercase tracking-widest relative globe caret"
+                    aria-label="Selector de idioma">Español</button
+                >
+            </li>
+            <li
+                class="w-full py-3 px-4 flex flex-col justify-center items-center uppercase tracking-widest duration-200 will-change-transform hover:scale-95 hover:text-white"
+            >
+                <a href="#" title="La casa del Dragon en español">Español</a>
+            </li>
+            <li
+                class="w-full py-3 px-4 flex flex-col justify-center items-center uppercase tracking-widest duration-200 will-change-transform hover:scale-95 hover:text-white"
+            >
+                <a href="#" title="House of Dragon in english">English</a>
+            </li>
+        </ul>
+
+        <ul
+            class="w-[80%] flex flex-col flex-nowrap md:flex-row md:flex-wrap md:justify-center items-center gap-y-0 gap-x-4 md:gap-x-10 md:gap-y-4 mt-12"
+        >
+            <li class="">
+                <a
+                    class="uppercase tracking-widest text-violet text-xs font-extrabold duration-200 hover:text-white"
+                    href="#"
+                    title="Explora nuestro contenido"
+                    >Explora nuestro contenido</a
+                >
+            </li>
+            <li class="">
+                <a
+                    class="uppercase tracking-widest text-violet text-xs font-extrabold duration-200 hover:text-white"
+                    href="#"
+                    title="Para toda la familia">Para toda la familia</a
+                >
+            </li>
+            <li class="">
+                <a
+                    class="uppercase tracking-widest text-violet text-xs font-extrabold duration-200 hover:text-white"
+                    href="#"
+                    title="Programa afiliados">Programa afiliados</a
+                >
+            </li>
+            <li class="">
+                <a
+                    class="uppercase tracking-widest text-violet text-xs font-extrabold duration-200 hover:text-white"
+                    href="#"
+                    title="HBO Max TV iniciar sesión"
+                    >HBO Max TV iniciar sesión</a
+                >
+            </li>
+            <li class="">
+                <a
+                    class="uppercase tracking-widest text-violet text-xs font-extrabold duration-200 hover:text-white"
+                    href="#"
+                    title="True detective: Noche Polar"
+                    >True detective: Noche Polar</a
+                >
+            </li>
+            <li class="">
+                <a
+                    class="uppercase tracking-widest text-violet text-xs font-extrabold duration-200 hover:text-white"
+                    href="#"
+                    title="Barbie">Barbie</a
+                >
+            </li>
+            <li class="">
+                <a
+                    class="uppercase tracking-widest text-violet text-xs font-extrabold duration-200 hover:text-white"
+                    href="#"
+                    title="Succession">Succession</a
+                >
+            </li>
+            <li class="">
+                <a
+                    class="uppercase tracking-widest text-violet text-xs font-extrabold duration-200 hover:text-white"
+                    href="#"
+                    title="Friends">Friends</a
+                >
+            </li>
+            <li class="">
+                <a
+                    class="uppercase tracking-widest text-violet text-xs font-extrabold duration-200 hover:text-white"
+                    href="#"
+                    title="Juego de tronos">Juego de tronos</a
+                >
+            </li>
+        </ul>
+
+        <ul
+            class="flex flex-wrap justify-center items-center gap-y-0 gap-x-4 mt-4 md:gap-8 md:flex-nowrap"
+        >
+            <li>
+                <a
+                    class="text-sm text-violet duration-200 hover:text-white"
+                    href="#"
+                    title="Política de privacidad">Política de privacidad</a
+                >
+            </li>
+            <li>
+                <a
+                    class="text-sm text-violet duration-200 hover:text-white"
+                    href="#"
+                    title="Condiciones de uso">Condiciones de uso</a
+                >
+            </li>
+            <li>
+                <a
+                    class="text-sm text-violet duration-200 hover:text-white"
+                    href="#"
+                    title="Centro de ayuda">Centro de ayuda</a
+                >
+            </li>
+            <li>
+                <a
+                    class="text-sm text-violet duration-200 hover:text-white"
+                    href="#"
+                    title="Información corporativa">Información corporativa</a
+                >
+            </li>
+        </ul>
+
+        <span class="mt-4 text-center text-xs text-violet font-medium"
+            >©2024 HBO Nordic AB. All Rights Reserved. HBO Max™ is used under
+            license.</span
+        >
+    </div>
+</footer>
+
+<style>
+    .globe::before {
+        content: "";
+        width: 1.25em;
+        height: 1.25em;
+        display: inline-block;
+
+        background: url("/assets/svg/globe.svg") no-repeat center center /
+            contain;
+        vertical-align: middle;
+        margin-right: 0.5em;
+    }
+
+    .caret::after {
+        content: "";
+        width: 0.75em;
+        height: 0.75em;
+        display: inline-block;
+
+        background: url("/assets/svg/caret.svg") no-repeat center center /
+            contain;
+        vertical-align: middle;
+        margin-left: 0.5em;
+    }
+
+    .is-active {
+        height: 9em;
+        border-color: #9e86ff;
+    }
+</style>
+
+<script is:inline>
+    const langBtn = document.getElementById("lang");
+    const langList = document.getElementById("lang-list");
+
+    langBtn.addEventListener("click", () => {
+        langList.classList.toggle("is-active");
+    });
+</script>

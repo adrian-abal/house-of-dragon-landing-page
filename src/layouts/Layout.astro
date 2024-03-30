@@ -1,0 +1,45 @@
+---
+import "@fontsource-variable/nunito-sans";
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--fucsia: #b535f6;
+		--violet: #9e86ff;
+	}
+	html {
+		font-family: "Nunito Sans Variable", sans-serif;
+	}
+
+	::-webkit-scrollbar {
+		width: 0.4em;
+		border-radius: 2em;
+	}
+
+	::-webkit-scrollbar-thumb {
+		border-radius: 2em;
+		background-color: #ddd;
+	}
+	::-webkit-scrollbar-track {
+		background-color: #222;
+	}
+</style>

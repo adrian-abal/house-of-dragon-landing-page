@@ -1,0 +1,76 @@
+---
+import { COVERS } from "../consts/covers";
+---
+
+<section
+    class="w-full flex flex-col justify-center items-center py-20 bg-black"
+>
+    <div
+        class="w-[90%] flex flex-col justify-center items-center gap-11 lg:w-[80%]"
+    >
+        <h2
+            class="text-3xl text-center text-balance text-white font-semibold md:text-4xl"
+        >
+            Más entretenimiento épico en HBO Max
+        </h2>
+
+        <ul
+            class="w-full grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6"
+        >
+            {
+                COVERS.map(({ name, url_page, thumbnail }, i) => (
+                    <li
+                        class:list={[
+                            "w-full max-w-52 mx-auto rounded-md shadow-card",
+                            {
+                                "hidden lg:block": i > 11,
+                            },
+                        ]}
+                    >
+                        <a
+                            class="rounded-md brilli"
+                            href={url_page}
+                            title={`Página principal de ${name}`}
+                        >
+                            <img
+                                class="object-cover rounded-md duration-200 hover:scale-105"
+                                src={`/assets/img/${thumbnail.url_resource}`}
+                                alt={`Carátula de ${thumbnail.alternative_text}`}
+                                loading="lazy"
+                            />
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</section>
+<style>
+    .brilli {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: relative;
+        overflow: hidden;
+    }
+    .brilli::after {
+        content: "";
+        width: 1%;
+        height: 200%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #dadada;
+        box-shadow: 0 0 0em 1.75em #dadada;
+        transform: rotate(45deg) translate(-8em, -50%);
+        opacity: 0.1;
+        transition: all 0.6s ease;
+        will-change: transform;
+    }
+
+    .brilli:hover::after {
+        transform: rotate(45deg) translate(12em, -50%);
+        opacity: 0;
+    }
+</style>
